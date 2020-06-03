@@ -107,6 +107,10 @@ echo "passwords" > passwords.pass
 # Do not track passwords
 echo "*.pass" > .gitignore
 ```
+## Example: Which day of the week most of the commits occured on.
+```
+git log | grep "Date: " | cut -d " " -f 4 | sort | uniq -c | sort -rn 
+```
 
 ## Summary
 
