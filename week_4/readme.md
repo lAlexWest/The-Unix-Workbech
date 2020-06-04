@@ -52,7 +52,7 @@ git add readme.md
 # or track all files
 git add -A
 ```
-- To remove file from track:
+- To remove file from track (before committing):
 ```
 git rm --cached readme.md
 ```
@@ -81,7 +81,7 @@ git reset --soft HEAD~
 
 - Git commands have their own man pages. You can access them with git help command. Like this example:
 ```
-# Manual for 'status' command
+# Manual for "status" command
 git help status
 ```
 - To see list of Git commits enter log command. Each commit has its time, date, and commit message recorded, along with a SHA-1 hash that uniquely identifies the commit.
@@ -118,6 +118,106 @@ git log | grep "Date: " | cut -d " " -f 4 | sort | uniq -c | sort -rn
 - Git log will show you your commit history.
 - Git diff displays what has changed between the last commit and your current untracked changes.
 - You can specify a .gitignore file in order to tell Git not to track certain files.
+
+# Branching
+
+## Creating Branches
+
+- Branching is one of the most powerful features that Git offers. Creating different Git branches allows you to work on a particular feature or set of files independently from other “copies” of a repository. That way you and a friend can work on different parts of the same file on different branches, and then Git can help you elegantly merge your branches and changes together.
+- To get list of all available branches:
+```
+# the "*" indicates which branch you're currently on
+git branch
+```
+- The default branch that is created is always called master. Usually people use this branch as the working version of the software that they are writing, while they develop new and potentially unstable features on other branches.
+
+- To add a branch we’ll also use the git branch command, followed the name of the branch we want to create:
+```
+git branch name-of-new-branch
+```
+- To change the branch:
+```
+git checkout name-of-the-branch
+
+# or create and change branch
+
+git checkout -b name-of-the-branch
+```
+- To delete branch:
+```
+git branch -d name-of-the-branch
+```
+- Example of branch usage:
+```
+echo "# Master branch" > readme.md
+git add -A
+git commit -m "master branch commit"
+
+git checkout -b password-feature
+echo "# Password-feature branch" > readme.md
+git add -A
+git commit -m "new feature branch commit"
+```
+
+## Merging branches and resolving conflicts
+- Now that we’ve made a couple of changes to readme.md, let’s combine those changes with what we have in the master branch. This is made possible by a Git merge. Merging allows you to elegantly combine the changes that have been made between two branches. Let’s merge the changes we made in the password-feature branch with the master branch. Git incorporates other branches into the current branch by default. When you’re merging, the current branch is also called the base branch. 
+- Example of merging:
+```
+echo "# Master branch" > readme.md
+git add -A
+git commit -m "master branch commit"
+
+git checkout -b password-feature
+echo "# Password-feature branch" >> readme.md
+git add -A
+git commit -m "added new content that doesnt modify our master branch contents"
+
+git merge password-feature
+```
+- But what if there are two commits in two separate branches that make different edits to the same line of text? When this occurs it is called a **conflict**. Example of conflict and its resolving:
+```
+# Creating conflict
+
+echo "# Master branch" > readme.md
+git add -A
+git commit -m "master branch commit"
+
+git checkout -b password-feature
+echo "# Password-feature branch" > readme.md
+git add -A
+git commit -m "changed 1 line to create conflict"
+
+git merge password-feature
+
+# Resolving conflict
+
+vim readme.md # delete conflicting line
+git add -A
+git commit -m "resolved conflict"
+```
+
+## Summary
+
+- Git branching allows you and others to work on the same code base together.
+- You can create a branch with the command git branch [name of branch].
+- To switch to a branch use git checkout [name of branch].
+- You can combine a branch with your current branch by using git merge.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
