@@ -203,9 +203,41 @@ git commit -m "resolved conflict"
 - To switch to a branch use git checkout [name of branch].
 - You can combine a branch with your current branch by using git merge.
 
+# GitHub
 
+## Using GitHub you can create repository by clicking button 'Create Repository'
 
+- GitHub offers a few suggestions about what to do with our new remote repository. We’ve already been using a local Git repository, and what GitHub provides is a remote Git repository. A remote Git repository is just a Git repository stored on a computer is that always turned on and connected to the internet, so it can act as a central point where we can share and sync our changes to files with our friends and colleagues. We can see which remote repositories our local repository is connected to with the git remote command:
 
+```
+# List of all remote repositories
+git remote
+
+# Add remote repo (origin - alias for remote repo)
+git remote add origin (https or ssh address to your repo)
+```
+
+- Git push updates a remote repository with all of the commits that we’ve made to our local Git repository. This first Git push you do when setting up a remote on GitHub with a local repository is a little different from future Git pushes. We’ll need to use the -u flag in order to set origin as the default remote repository so we don’t have to provide its name every time we want to interact with it:
+
+```
+git push -u origin master
+```
+
+## Markdown
+
+- Markdown is a markup language. Markup languages are sets of rules for adding decorative features to text. The most popular markup language is HTML, but you might have also heard of XML and LaTeX. Markdown is a powerful markup language because it’s small, intuitive, and readable when it’s written as plain text. GitHub transforms Markdown files (which end in the file extension .md) into simple HTML web pages in your repository. If there is a file called README.md in any folder in your repository, then that file is rendered to HTML and displayed on GitHub.
+
+There are example of markdown language:
+Few markdown rules:
+
+Pound signs (#, ##) make headings.
+- A word surrounded by single asterisks (*word*) makes that word italicized.
+- A word surrounded by double asterisks (**word**) makes that word bold.
+- You can create lists with hyphens (-) or numbers (1., 2., 3.).
+- Code can be placed in the middle of a line with single backticks (`code`).
+- A code block can be created by putting code in between a set of triple backticks (```).
+- You can insert a link with brackets and parentheses ([Link text here](http://jhu.edu)).
+- You can use an image with an exclamation point, and a link to an image (![Alt text here](http://jhu.edu/jeff.jpg))
 
 
 
