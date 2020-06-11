@@ -239,9 +239,41 @@ Pound signs (#, ##) make headings.
 - You can insert a link with brackets and parentheses ([Link text here](http://jhu.edu)).
 - You can use an image with an exclamation point, and a link to an image (![Alt text here](http://jhu.edu/jeff.jpg))
 
+## Pull Requests
+- A pull request allows you to interactively compare two different branches before you merge them so you can either go ahead with the merge or provide feedback to whoever opened the pull request. Essentially a pull request allows a person to ask another person if they’re willing to incorporate changes on one branch into another branch. 
+```
+# create new branch
+git checkout -b scripting-branch
 
+# change readme.md and all other things
+...
 
+# push to GitHub
+git push origin scripting-branch 
+```
+- Go to GitHub, button "New Pull Request" and so on... There you can compare branches, read and update conversations, compare code and other things.
+- With git pull Git finds the master branch on the origin remote repository and updates our local repository with the new commits.
 
+## Pages
+- GitHub Pages allows you to create and host a website on GitHub using only Git and Markdown. 
+
+## Forking
+- Forking a GitHub repository copies somebody else’s GitHub repository into your GitHub account. You can then modify this copy of their software however you like. After you’ve added some commits to your copy of the repository you can keep the new commits to yourself, share them with others, or you can open up a pull request for your new commits to be merged into the original source repository. This original source repository (the repository you forked) is often called the upstream repository.
+- Or you can clone repository to your local machine:
+```
+git clone 'your repo'
+```
+
+## Summary
+- You can use GitHub you create and host remote Git repositories.
+- A remote Git repository is a Git repository that is always connected to the internet.
+- List remote repositories with git remote.
+- Add remote repositiories with git remote add [name-of-remote] https://github.com/[username]/[repo-name].git
+- Add commits to your remote repository with git push [name-of-remote] [name-of-branch] or just git push if you’ve set up a default remote and branch.
+- To merge commits on a remote repository into your local repository use git pull [name-of-remote] [name-of-branch] or just git pull if you’ve set up a default remote and branch.
+- A pull request allows you to interactively compare two different branches before you merge them.
+- GitHub Pages allows you to host websites written in Markdown for free!
+- Forking a repository allows you to make changes to a copy of a public repository. You can then open a pull request if you think your changes should be merged into the upstream repository!
 
 
 
