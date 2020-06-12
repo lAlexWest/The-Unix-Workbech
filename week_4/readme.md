@@ -259,6 +259,9 @@ git push origin scripting-branch
 
 ## Forking
 - Forking a GitHub repository copies somebody else’s GitHub repository into your GitHub account. You can then modify this copy of their software however you like. After you’ve added some commits to your copy of the repository you can keep the new commits to yourself, share them with others, or you can open up a pull request for your new commits to be merged into the original source repository. This original source repository (the repository you forked) is often called the upstream repository.
+```
+git pill
+```
 - Or you can clone repository to your local machine:
 ```
 git clone 'your repo'
@@ -274,14 +277,4 @@ git clone 'your repo'
 - A pull request allows you to interactively compare two different branches before you merge them.
 - GitHub Pages allows you to host websites written in Markdown for free!
 - Forking a repository allows you to make changes to a copy of a public repository. You can then open a pull request if you think your changes should be merged into the upstream repository!
-
-
-
-
-
-
-
-
-
-
 
